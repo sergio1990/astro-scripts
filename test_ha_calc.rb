@@ -17,6 +17,7 @@ def human_dec_hours(dec_hours)
   "#{hours} h #{minutes} m"
 end
 
+# Steps for calculations were taken from here - http://www.stargazing.net/kepler/altaz.html
 puts 'Calculating the HA of the M13...'
 puts 'The target date is 21 June 2021 23:00 UTC+3'
 
@@ -31,6 +32,7 @@ month=6
 day=21
 puts ''
 puts '=> Step 2 - Days after J2000'
+# https://thecynster.home.blog/2019/11/08/calculating-the-julian-date-and-j2000/
 JD=367*year - (7*(year + ((month + 9)/12.0).ceil)/4.0).ceil - ((((year + (month - 9) / 7.0) / 100.0).ceil + 1) / 4.0).ceil + (275 * month / 9.0).ceil + day + 1721028.5 + utc_time / 24
 J2000 = JD - 2451545.0
 
